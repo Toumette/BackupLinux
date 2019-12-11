@@ -9,6 +9,6 @@ Lancement depuis le bureau, en interface graphique (double-clic/icône).
 
 Ouvre une console temporaire permettant de suivre le déroulement de la sauvegarde et de s'assurer de sa bonne exécution.
 
-Testé sous OpenSuse Leap.
+Testé sous OpenSuse Leap - bureau KDE.
 
 (NB : Script volontairement "sur-commenté" !)
