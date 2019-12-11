@@ -1,0 +1,87 @@
+#!/bin/bash
+
+###############################################################################
+# SCRIPT DE SAUVEGARDE PROPREMENT DIT                                         #
+# sauvegarde récursive incrémentale du dossier 'home' de l'utilisateur        #
+# courant (~) sur disque externe ou cle USB                                   #
+# ce script est appelé en environnement graphique par le lanceur              #
+# et s'éxécute dans la fenêtre que ce dernier a ouverte                       #
+###############################################################################
+
+###############################################################################
+# configuration de l'interpréteur BASH pour fonctionner en mode 'strict'      #
+# afin de faciliter le débogage du script :                                   #
+###############################################################################
+
+set -e            # sortie immédiate si erreur dans commande (code /= de 0)
+name=${1:-}       # redéfinit les arguments d'entrée sous forme de variables
+                  # internes au scrip (permet d'utiliser -u avec des
+                  # arguments d'entrée - non utilisé ici)
+set -u            # interdit le référencement de variables non définies avant
+set -o pipefail   # empêche le masquage des erreurs dans un pipeline
+IFS=$'\n\t'       # IFS correspond à un séparateur de champ interne à Bash
+                  # il contrôle ce que Bash appelle le fractionnement de mots
+
+# -----------------------------------------------------------------------------
+
+echo 'Patientez, backup en cours... ';
+echo '© Henri';
+echo '-----------------------------------------------------------------------------';
+
+sleep 1;
+
+echo "Le backup est en cours d'éxécution...";
+echo '-----------------------------------------------------------------------------';
+echo;
+
+# le backup est éxécuté par la commande 'rsync'
+# le bakslash permet d'écrire les arguments sur plusieurs lignes en supprimant
+# l'interprétation du caractère qui le suit immédiatement (saut à la ligne)
+# NB : il ne faut pas d'espace après le backslash
+
+rsync -azv --delete   \
+--exclude=".cache/"   \
+--exclude=".mozilla/" \
+--exclude=".local/"   \
+--exclude=".config/"  \
+--backup --backup-dir=/run/media/disque_et_repertoire_de_stockage_des_fichiers_effaces/ \
+~/ \
+/run/media/disque_et_repertoire_de_stockage_de_la_sauvegarde/;
+
+sleep 1;
+echo;
+echo '-----------------------------------------------------------------------------';
+echo 'Sauvegarde terminée';
+echo '-----------------------------------------------------------------------------';
+sleep 1;
+
+
+# DETAIL DES PARAMETRES DE RSYNC UTILISES POUR LE BACKUP :
+# --------------------------------------------------------
+# (-n   simule la sauvegarde sans la faire... NB : à supprimer quand OK !)
+#
+# -v    augmente la quantité d'infos imprimées au démarrage
+#
+# -z    rsync compresses the file data as it is sent to the destination 
+#       machine,  which  reduces the amount of data being transmitted
+#
+# -a    equivalent to -rlptgoD. It is a quick way of saying you want recursion
+#       and want to preserve almost everything
+#       (with -H being a notable omission)   =>détails ci-dessous=>
+#
+# -r    parcours le dossier indiqué et tous ses sous-dossiers (récursivité)
+# -l    copie les liens symboliques comme liens symboliques
+# -p    permet de garder les fichiers partiellement transférés si interruption
+# -t    préserve les dates
+# -g    préserve le groupe
+# -o    met le propriétaire du fichier de destination identique à celui
+#       du fichier source
+# -D    préserve les infos des périphériques
+#
+# --delete         efface, dans le backup, les fichiers supprimés mais
+# --backup         en garde quand même une copie de sécurité
+# --backup-dir=xxx <== ici !
+#
+# --exclude="XX" précise les répertoires et fichiers à exclure du backup
+#       attention ! les chemins indiqués ici sont toujours des chemins RELATIFS :
+#       ils partent nécessairement du répertoire "source"
