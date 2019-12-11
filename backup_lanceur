@@ -1,0 +1,64 @@
+#!/bin/bash
+
+###############################################################################
+# LANCEUR DU SCRIPT DE SAUVEGARDE                                             #
+# sauvegarde récursive incrémentale du dossier 'home' de l'utilisateur        #
+# courant (~) sur disque externe ou clé USB                                   #
+# ce lanceur est appelé en environnement graphique et ouvre fenêtre pour      #
+# l'exécution du script de sauvegarde proprement dit                          #
+# un raccourci vers le lanceur est à placer sur le bureau                     #
+###############################################################################
+
+###############################################################################
+# configuration de l'interpréteur BASH pour fonctionner en mode 'strict'      #
+# afin de faciliter le débogage du script :                                   #
+###############################################################################
+
+set -e            # sortie immédiate si erreur dans commande (code /= de 0)
+name=${1:-}       # redéfinit les arguments d'entrée sous forme de variables
+                  # internes au scrip (permet d'utiliser -u avec des
+                  # arguments d'entrée)
+set -u            # interdit le référencement de variables non définies avant
+set -o pipefail   # empêche le masquage des erreurs dans un pipeline
+IFS=$'\n\t'       # IFS correspond à un séparateur de champ interne à Bash
+                  # il contrôle ce que Bash appelle le fractionnement de mots
+
+# faire particulièrement attention aux quotes, double quotes, apostrophes...
+# les temporisations 'sleep' ne sont pas indispensables au fonctionnement,
+# elles permettent de suivre la progression des opérations
+
+# ouverture de la fenêtre terminal par 'xterm' et
+# éxécution de toutes les commandes ci-dessous dans cette nouvelle fenêtre
+# ces commandes sont celles situées entre les 2 doubles quotes "XXX"
+# NB : il est indispensable, dans ce cas, d'utiliser des simples quotes
+# pour la commande 'echo'
+
+xterm -e "
+
+echo 'lanceur du programme de backup';
+echo '© Henri';
+echo '-----------------------------------------------------------------------------';
+
+sleep 1;
+
+# lancement du script de backup (chemin à partir de home) :
+~/ProgsEtScripts/Sauvegardes/backup;
+
+echo 'le programme de backup a été éxécuté';
+
+echo '-----------------------------------------------------------------------------';
+sleep 1;
+
+# la commande 'read' permet de laisser la fenêtre ouverte pour consultation
+# jusqu'à ce que l utilisateur presse 'entrée'
+
+read -p 'Presser [Enter] pour fermer la fenêtre...';
+
+echo;
+echo 'Bye !';
+echo;
+sleep 1;
+
+"
+# cette double quote indique la fin des commandes éxécutées dans la fenêtre
+# créée par 'xterm' et la fermeture de cette fenêtre
