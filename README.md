@@ -3,7 +3,7 @@ Script minimaliste et commenté de sauvegarde récursive et incrémentale des do
 
 Effacement dans la sauvegarde des données supprimées dans la source mais copie conservée dans un répertoire spécial de la sauvegarde, en cas de besoin ou de fausse manipulation.
 
-Liste configurable de répertoires à exclure de la sauvegarde ()
+Liste configurable de répertoires à exclure de la sauvegarde (caches, historiques de navigateurs...)
 
 Configuration de Bash en mode 'strict'.
 
