@@ -14,4 +14,4 @@
 
 * Testé sous OpenSuse Leap - bureau KDE.
 
-(NB : Script volontairement "sur-commenté" !)
+_Ce cript, volontairement "sur-commenté", est destiné aux débutants en scripting Bash._
