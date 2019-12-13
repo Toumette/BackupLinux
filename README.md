@@ -10,7 +10,7 @@
 
 * Lancement depuis le bureau, en interface graphique (double-clic/icône).
 
-* Ouvre une fenêtre console temporaire permettant de suivre le déroulement de la sauvegarde et de s'assurer de sa bonne exécution.
+* Cet outil comporte un "lanceur" qui ouvre une fenêtre console temporaire permettant d'exécuter le "backup" proprement dit et de s'assurer de son bon déroulement.
 
 * Testé sous OpenSuse Leap - bureau KDE.
 
