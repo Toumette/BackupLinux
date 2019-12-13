@@ -2,15 +2,15 @@
 
 ###############################################################################
 # LANCEUR DU SCRIPT DE SAUVEGARDE                                             #
-# sauvegarde récursive incrémentale du dossier 'home' de l'utilisateur        #
+# Sauvegarde récursive incrémentale du dossier 'home' de l'utilisateur        #
 # courant (~) sur disque externe ou clé USB                                   #
-# ce lanceur est appelé en environnement graphique et ouvre fenêtre pour      #
+# Ce lanceur est appelé en environnement graphique et ouvre fenêtre pour      #
 # l'exécution du script de sauvegarde proprement dit                          #
-# un raccourci vers le lanceur est à placer sur le bureau                     #
+# Un raccourci vers le lanceur est à placer sur le bureau                     #
 ###############################################################################
 
 ###############################################################################
-# configuration de l'interpréteur BASH pour fonctionner en mode 'strict'      #
+# Configuration de l'interpréteur BASH pour fonctionner en mode 'strict'      #
 # afin de faciliter le débogage du script :                                   #
 ###############################################################################
 
@@ -35,7 +35,7 @@ IFS=$'\n\t'       # IFS correspond à un séparateur de champ interne à Bash
 
 xterm -e "
 
-echo 'lanceur du programme de backup';
+echo 'Lanceur du programme de backup';
 echo '© Henri';
 echo '-----------------------------------------------------------------------------';
 
