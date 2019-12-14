@@ -6,7 +6,7 @@
 
 * Liste configurable de répertoires à exclure de la sauvegarde (caches, historiques de navigateurs, temporaires...)
 
-* Configuration de Bash en mode 'strict' (debogage facilité).
+* Configuration de Bash en mode "strict" (debogage facilité).
 
 * Lancement depuis le bureau, en interface graphique (double-clic/icône).
 
