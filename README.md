@@ -18,4 +18,6 @@
 
 _Ce cript, volontairement "sur-commenté", est destiné aux débutants en scripting Bash._
 
- © Henri 10/12/19
+---
+
+_© Henri 10/12/19_
