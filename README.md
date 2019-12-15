@@ -14,7 +14,7 @@
 
 * Configurer la source de la sauvegarde, sa destination ainsi que les fichiers et répertoires à exclure éventuellement dans le script avant son 1er lancement.
 
-* Testé sous OpenSuse Leap - bureau KDE.
+* Testé sous Linux OpenSuse Leap - bureau KDE.
 
 _Ces cripts, volontairement "sur-commentés", s'adressent aux débutants en scripting Bash._
 
