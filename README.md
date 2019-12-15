@@ -12,12 +12,11 @@
 
 * Cet outil comporte un "lanceur" qui ouvre une fenêtre console temporaire permettant d'exécuter le "backup" proprement dit et de s'assurer de son bon déroulement.
 
-* Configurer la source de la sauvegarde et sa destination dans le script avant son 1er lancement.
+* Configurer la source de la sauvegarde, sa destination ainsi que les fichiers et répertoires à exclure éventuellement dans le script avant son 1er lancement.
 
 * Testé sous OpenSuse Leap - bureau KDE.
 
-_Ce cript, volontairement "sur-commenté", est destiné aux débutants en scripting Bash._
+_Ces cripts, volontairement "sur-commentés", s'adressent aux débutants en scripting Bash._
 
 ---
-
 _© Henri 10/12/19_
