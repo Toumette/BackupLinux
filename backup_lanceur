@@ -44,7 +44,7 @@ sleep 1;
 # lancement du script de backup (chemin à partir de home) :
 ~/ProgsEtScripts/Sauvegardes/backup;
 
-echo 'le programme de backup a été éxécuté';
+echo 'le programme de backup a été exécuté';
 
 echo '-----------------------------------------------------------------------------';
 sleep 1;
