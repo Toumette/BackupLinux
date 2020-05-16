@@ -17,5 +17,5 @@
 * Testé sous Linux OpenSuse Leap - bureau KDE.
 
 ---
-_Ces cripts, volontairement "sur-commentés", s'adressent aux débutants en scripting Bash._
+_Ces scripts, volontairement "sur-commentés", s'adressent aux débutants en scripting Bash._
 _© Henri 10/12/19_
