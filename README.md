@@ -18,4 +18,5 @@
 
 ---
 _Ces scripts, volontairement "sur-commentés", s'adressent aux débutants en scripting Bash._
-_© Henri 10/12/19_
+
+_© Henri 10/12/19 - Plus d'informations : https://henri.nitnoc.me_
