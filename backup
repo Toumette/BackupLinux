@@ -73,7 +73,7 @@ sleep 1;
 # --no-owner    destinataire ne supporte pas les droits Unix
 # --no-group    (ex. HD externe formatté FAT...)
 #
-# -r    Parcours le dossier indiqué et tous ses sous-dossiers (récursivité)
+# -r    Parcourt le dossier indiqué et tous ses sous-dossiers (récursivité)
 # -l    Copie les liens symboliques comme liens symboliques
 # -p    Permet de garder les fichiers partiellement transférés si interruption
 # -t    Préserve les dates
