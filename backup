@@ -39,7 +39,7 @@ echo;
 # l'interprétation du caractère qui le suit immédiatement (saut à la ligne)
 # NB : il ne faut pas d'espace après le backslash
 
-rsync -azv --delete   \
+rsync -azv --no-perms --delete   \
 --exclude=".cache/"   \
 --exclude=".mozilla/" \
 --exclude=".local/"   \
@@ -68,6 +68,9 @@ sleep 1;
 # -a    Equivalent to -rlptgoD. It is a quick way of saying you want recursion
 #       and want to preserve almost everything
 #       (with -H being a notable omission)   =>détails ci-dessous=>
+#
+# --no-perms    permet une copie sans afficher d'erreur si le système de fichier
+#               destinataire ne supporte pas les droits Unix (ex. HD externe formatté FAT)
 #
 # -r    Parcours le dossier indiqué et tous ses sous-dossiers (récursivité)
 # -l    Copie les liens symboliques comme liens symboliques
