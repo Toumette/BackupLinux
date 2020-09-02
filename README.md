@@ -8,6 +8,8 @@
 
 * Configuration de Bash en mode "strict" (debogage facilité).
 
+* Ne génère pas d'erreur lorsque la cible de sauvegarde ne supporte pas les droits Unix (ec. Disque externe formatté en FAT).
+
 * Lancement depuis le bureau, en interface graphique (double-clic/icône).
 
 * Cet outil comporte un "lanceur" qui ouvre une fenêtre console temporaire permettant d'exécuter le "backup" proprement dit et de s'assurer de son bon déroulement.
